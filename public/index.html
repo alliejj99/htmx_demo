@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTMX 예제</title>
+
+  <!-- HTMX -->
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+
+</head>
+
+<body>
+  <h1>htmx 테스트</h1>
+
+  <h2>1) GET 요청으로 부분 갱신</h2>
+  <button hx-get="/fragment" hx-target="#panel" hx-swap="innerHTML">데이터 새로고침</button>
+  <div id="panel">여기에 서버 응답이 들어옵니다</div>
+
+  <hr>
+
+  <h2>2) POST 요청으로 폼 제출</h2>
+  <form hx-post="/save" hx-target="#result">
+    <input name="title" placeholder="제목 입력">
+    <button type="submit">저장</button>
+  </form>
+  <div id="result">결과 영역</div>
+</body>
+
+</html>
